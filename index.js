@@ -30,8 +30,10 @@ app.get("/", (req, res) => {
 })
 const {allPlayers} = require("./players");
 io.on('connection', (socket) => {
-    
-    const player = new Player(socket.id, 0, 0, 20, "#fff","random",100);
+    const player = new Player(socket.id, 70, 70, 20, "#fff","random",100,{
+        currentAmmo:15,
+        maxAmmo:15
+    });
     allPlayers.addPlayer(player);
     socket.emit('initBoxes', boxManager.getBoxes());
     try {
@@ -51,6 +53,6 @@ io.on('connection', (socket) => {
     
 });
 
-server.listen(3565, () => {
-  console.log('server running at http://localhost:3565');
+server.listen(3000, () => {
+  console.log('server running at http://localhost:3000');
 });

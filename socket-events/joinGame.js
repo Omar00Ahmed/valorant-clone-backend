@@ -5,8 +5,12 @@ function joinGame(io,socket,data){
     socket.emit("loadPlayers", {players: allPlayers.getPlayers()});
     io.emit("playerJoined",{
         id:socket.id,
-        x:0,
-        y:0,
+        x:70,
+        y:70,
+        ammo:{
+            currentAmmo:15,
+            maxAmmo:100
+        },
         health:currentPlayer.health
     })
 }

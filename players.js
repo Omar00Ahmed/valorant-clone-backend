@@ -19,7 +19,7 @@
 
 
  class Player{
-    constructor(id, x, y, radius, color,name,health){
+    constructor(id, x, y, radius, color,name,health,ammo){
         this.id = id;
         this.x = x;
         this.y = y;
@@ -27,6 +27,7 @@
         this.color = color;
         this.health = 100;
         this.name = name;
+        this.ammo = ammo;
     }
 
     getData(){
