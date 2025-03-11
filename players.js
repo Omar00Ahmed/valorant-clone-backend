@@ -28,6 +28,7 @@
         this.health = 100;
         this.name = name;
         this.ammo = ammo;
+        
     }
 
     getData(){
